@@ -4,44 +4,42 @@
     <img src="./figures/ant-bailing.png" width="100"/>
 <p>
 
-<p align="center">📑 <a href="https://arxiv.org/abs/2506.09344">Technical Report</a>｜📖<a href="https://lucaria-academy.github.io/Ming-Omni/">Project Page</a> ｜🤗 <a href="https://huggingface.co/inclusionAI/Ming-Lite-Omni">Hugging Face</a>｜ 🤖 <a href="https://www.modelscope.cn/models/inclusionAI/Ming-Lite-Omni">ModelScope</a>
+<p align="center">📑 <a href="https://github.com/inclusionAI/Ming">技术报告</a>｜📖<a href="https://lucaria-academy.github.io/Ming-Omni/">项目主页</a> ｜🤗 <a href="https://huggingface.co/inclusionAI/Ming-Lite-Omni">Hugging Face链接</a>｜ 🤖 <a href="https://www.modelscope.cn/models/inclusionAI/Ming-Lite-Omni">ModelScope链接</a>｜
 
 
+## 引言
 
-## Introduction
-
-Ming-lite-omni, a light version of Ming-omni, which is derived from [Ling-lite](https://github.com/inclusionAI/Ling) and features 2.8 billion activated parameter. Ming-lite-omni is a unified multimodal model capable of processing images, text, audio, and video, while demonstrating strong proficiency in both speech and image generation. Ming-lite-omni employs dedicated encoders to extract tokens from different modalities, which are then processed by Ling, an MoE architecture equipped with newly proposed modality-specific routers. This design enables a single model to efficiently process and fuse multimodal inputs within a unified framework, thereby facilitating diverse tasks without requiring separate models, task-specific fine-tuning, or structural redesign. Importantly, Ming-lite-omni extends beyond conventional multimodal models by supporting audio and image generation. This is achieved through the integration of an advanced audio decoder for natural-sounding speech and Ming-Lite-Uni for high-quality image generation, which also allow the model to engage in context-aware chatting, perform text-to-speech conversion, and conduct versatile image editing. Our experimental results showcase Ming-lite-omni offers a powerful solution for unified perception and generation across all modalities. 
-Notably, Ming-lite-omni is the first open-source model we are aware of to match GPT-4o in modality support, and we release all code and model weights to encourage further research and development in the community.
-
+Ming-lite-omni 是 Ming-omni 的轻量级版本，源自 Ling-lite，28 亿激活参数。Ming-lite-omni 是一个统一的多模态模型，能够处理图像、文本、音频和视频输入，同时在语音和图像生成方面也表现出色。Ming-lite-omni 使用专用编码器从不同模态中提取 token，然后由 Ling（配备了新型模态专用路由的 MoE 架构）进行处理。这种设计使单个模型能够在统一的框架内高效地处理和融合多模态输入，无需单独构建模型、进行针对特定任务的微调或重新设计结构，从而简化了各种任务的执行。更重要的是，Ming-lite-omni 超越了传统的多模态模型，支持音频和图像生成。这是通过集成用于自然语音的高级音频解码器和用于高质量图像生成的 Ming-Lite-Uni 实现的，也使模型能够进行情景感知聊天、执行文本到语音到转化以及多种图像编辑。实验结果表明，Ming-lite-omni 为跨所有模态的统一感知和生成提供了强大的解决方案。
+值得注意的是，Ming-lite-omni 是我们所知的第一个在模态支持方面与 GPT-4o 匹敌的开源模型，我们公开所有代码和模型权重，以鼓励社区的进一步研究和开发。
 
 <p align="center">
     <img src="./figures/ming.png" width="800"/>
 <p>
 
-## 📌 Updates
+## 📌 更新
 
-* [2025.06.12] 🔥 Our [Technical Report](https://arxiv.org/abs/2506.09344) is in public on arxiv.
-* [2025.05.28] 🔥 The official version of Ming-lite-omni is released, with better performance and image generation support.
-* [2025.05.04] 🔥 We release the test version of Ming-lite-omni：[Ming-lite-omni-Preview](https://github.com/inclusionAI/Ming/tree/Ming-Lite-Omni-Preview).
-
-
-## Key Features
-
-- **Unified Omni-Modality Perception**: Ming-lite-omni, built on [Ling](https://github.com/inclusionAI/Ling), an MoE architecture LLM, resolves task conflicts and ensures coherent integration of tokens from different modalities through modality-specific routers.
-
-- **Unified Perception and Generation**: Ming-lite-omni achieves unified understanding and generation, enabling the model to interpret multimodal instructions and user intent during generation, which helps enhance generation quality and improves usability across multiple tasks.
-
-- **Innovative Generation Capabilities**: Ming-lite-omni can perceive all modalities and generate high-quality text, real-time speech, and vivid images simultaneously, delivering exceptional cross-modal performance across diverse tasks including image perception, audio-visual interaction, and image generation.
+* [2025.06.12] 🔥  [技术报告](https://arxiv.org/abs/2506.09344) 在arxiv发布。
+* [2025.05.28] 🔥  正式版发布，性能更佳，支持图像生成。
+* [2025.05.04] 🔥 发布Ming-lite-omni测试版本[Ming-lite-omni-Preview](https://github.com/inclusionAI/Ming/tree/Ming-Lite-Omni-Preview)。
 
 
-##  Evaluation
-Ming-lite-omni delivers exceptional cross-modal performance, as validated across image perception, audio-visual interaction, and image generation tasks. Specifically, in the image perception task, Ming-lite-omni attained performance comparable to that of Qwen2.5-VL-7B by activating only 2.8B parameters. It delivers superior performance in end-to-end speech understanding and instruction following, surpassing Qwen2.5-Omni and Kimi-Audio. It also supports native-resolution image generation, editing, and style transfer, achieving a GenEval score of 0.64, outperforming mainstream models such as SDXL. In terms of FID, Ming-lite-omni reaches 4.85, setting a new SOTA across existing methods.
+## 关键特征
+
+- **统一全模态感知**: Ming-lite-omni 建立在 [Ling](https://github.com/inclusionAI/Ling)（MoE 架构 LLM）之上，它可以解决任务冲突并确保通过特定模态的路由器对来自不同模态的 token 进行一致集成。
+- **统一感知与生成**: Ming-lite-omni 实现统一理解与生成，使模型能够在生成过程中理解多模态指令和用户意图，从而提升生成质量并提高跨多任务的可用性。
+- **创新的生成能力**: 可以同时感知所有模态并生成高质量文本、实时语音和生动图像，在图像感知、视听交互和图像生成等多种任务中提供卓越的跨模态性能。
+
+##  评测
+
+Ming-lite-omni 在图像感知、视听交互和图像生成任务中均表现出色，展现出卓越的跨模态性能。具体而言，在图像感知任务中，Ming-lite-omni 仅激活 2.8B 个参数，便获得了与 Qwen2.5-VL-7B 相当的性能。它在端到端语音理解和指令跟随方面表现出色，超越了 Qwen2.5-Omni 和 Kimi-Audio。它还支持原生分辨率图像生成、编辑和风格迁移，GenEval 得分 0.64，超越 SDXL 等主流模型。在 FID 指标方面，Ming-lite-omni 达到 4.85，设定了现有方法的新 SOTA。
+
+
 <p align="center">
     <img src="./figures/performance.png" width="800"/>
 <p>
 
 
-### Image benchmark
+### 图像 benchmark
 <div align="center">
 
 | Benchmarks        | Ming-lite-omni |    Qwen2.5-VL-7B-Instruct    | InternVL2.5-8B-MPO |
@@ -59,7 +57,7 @@ Ming-lite-omni delivers exceptional cross-modal performance, as validated across
 </div>
 
 
-#### Encyclopedia Benchmarks  
+#### 百科知识 Benchmarks  
 <div align="center">
 
 | Object Recognition   | Ming-lite-omni |  Qwen2.5-VL-7B-Instruct  |
@@ -74,7 +72,7 @@ Ming-lite-omni delivers exceptional cross-modal performance, as validated across
 
 </div>
 
-### Video benchmark
+### 视频 benchmark
 
 <div align="center">
 
@@ -87,9 +85,9 @@ Ming-lite-omni delivers exceptional cross-modal performance, as validated across
 | Average                 |  <b>59.4</b>   |         59.2          |
 
 </div>
-Note: All models are evaluated based on 128 uniformly sampled frames.
+注: 所有模型均基于 128 个均匀采样的帧进行评估。
 
-### Audio benchmark
+### 音频 benchmark
 #### SpeechQA
 
 <div align="center">
@@ -119,7 +117,7 @@ Note: All models are evaluated based on 128 uniformly sampled frames.
 
 
 
-### Information-Seeking Benchmark
+### 信息检索 Benchmark
 <div align="center">
 
 | Model          | InfoSeek_H-mean | InfoSeek_unseen_question | InfoSeek_unseen_entity |
@@ -153,11 +151,11 @@ Note: All models are evaluated based on 128 uniformly sampled frames.
 | ScreenSpot-V2              |  <b>84.1</b>   |     81.4     |           -            |
 | AITZ(EM)                   |  <b>66.6</b>   |      -       |         57.6*          |
 </div>
-Note: * denotes the reproduced results.
+注: * 表示复现的结果.
 
 
 
-### Unified Generation Benchmark
+### 统一生成 Benchmark
 
 <div align="center">
 
@@ -173,21 +171,19 @@ Note: * denotes the reproduced results.
 
 </div>
 
-Please refer to our technical report for more comprehensive evaluation results. 
+请参阅我们的技术报告以获得更全面的评测结果。
 
 
-## Model Downloads
+## 模型下载
 
-You can download the model from both Huggingface and ModelScope.
-
+可以通过Huggingface和ModelScope进行下载。
 <div align="center">
 
-| **Model**      |   **Input modality**    | **Oput modality** |                                                                     **Download**                                                                     |
-|:---------------| :---------------------: | :---------------: |:----------------------------------------------------------------------------------------------------------------------------------------------------:|
-| Ming-Lite-Omni | Image,text,viedio,audio | Image,text,audio  | [🤗 HuggingFace](https://huggingface.co/inclusionAI/Ming-Lite-Omni) <br>[🤖 ModelScope](https://www.modelscope.cn/models/inclusionAI/Ming-Lite-Omni) |
+|     **模型**     |  **输入模态**   | **输出模态** |                                                                       **下载链接**                                                                       |
+|:--------------:|:-----------:|:--------:|:----------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Ming-Lite-Omni | 图片,文本,视频,音频 | 图片,文本,音频 | [🤗 HuggingFace](https://huggingface.co/inclusionAI/Ming-Lite-Omni) <br>[🤖 ModelScope](https://www.modelscope.cn/models/inclusionAI/Ming-Lite-Omni) |
 </div>
-If you're in mainland China, we strongly recommend you to download our model from 🤖 <a href="https://www.modelscope.cn/models/inclusionAI/Ming-Lite-Omni">ModelScope</a>.
-
+如果您的所在地位于中国大陆，强烈建议您从🤖 <a href="https://www.modelscope.cn/models/inclusionAI/Ming-Lite-Omni">ModelScope</a>下载。
 
 ```shell
 # huggingface
@@ -199,28 +195,25 @@ git clone https://huggingface.co/inclusionAI/Ming-Lite-Omni
 cd ./path/to/local/model
 pip install modelscope
 modelscope download --model inclusionAI/Ming-Lite-Omni --local_dir ./
-
 ```
 
-## Use Cases
+## 案例
+更多案例参考我们的项目主页 [page](https://lucaria-academy.github.io/Ming-Omni/)。
 
-Additional demonstration cases are available on our project [page](https://lucaria-academy.github.io/Ming-Omni/).
+## 使用示例
 
+请按照模型[下载页面](#model-downloads)下载我们的模型，然后您可以参考以下代码运行 Ming-lite-omni 模型。
 
-## Example Usage
+Python 环境依赖项安装。
 
-Please download our model following [Model Downloads](#model-downloads), then you can refer to the following codes to run Ming-lite-omni model.
-
-Python environment dependency installation.
 ```shell
 pip install -r requirements.txt
 pip install data/matcha_tts-0.0.5.1-cp38-cp38-linux_x86_64.whl
 pip install diffusers==0.33.0
 pip install nvidia-cublas-cu12==12.4.5.8  # for H20
 ```
-Note: We test following examples on hardware of NVIDIA H800-80GB with CUDA 12.2. Loading inclusionAI/Ming-Lite-Omni in bfloat16 takes about 40890MB memory.
 
-
+注：以下示例在 NVIDIA H800-80GB & CUDA 12.2版本通过运行测试。加载 bfloat16 格式的inclusionAI/Ming-Lite-Omni 大约需要 40890MB 内存。
 
 ```python
 import os
@@ -230,7 +223,7 @@ from modeling_bailingmm import BailingMMNativeForConditionalGeneration
 
 # build model
 model = BailingMMNativeForConditionalGeneration.from_pretrained(
-    "inclusionAI/Ming-Lite-Omni", # ./path/to/local/model, load from local_path
+    "inclusionAI/Ming-Lite-Omni",
     torch_dtype=torch.bfloat16,
     low_cpu_mem_usage=True
 ).to("cuda")
@@ -238,11 +231,7 @@ model = BailingMMNativeForConditionalGeneration.from_pretrained(
 assets_path = YOUR_ASSETS_PATH
 
 # build processor
-processor = AutoProcessor.from_pretrained(
-    "inclusionAI/Ming-Lite-Omni", # ./path/to/local/model, load from local_path
-    trust_remote_code=True
-)
-
+processor = AutoProcessor.from_pretrained("inclusionAI/Ming-Lite-Omni", trust_remote_code=True)
 ```
 
 ```python
@@ -282,7 +271,7 @@ messages = [
 # The flowers in this image are forget-me-nots. These delicate blooms are known for their small, five-petaled flowers that come in various shades of blue, pink, and white. 
 ```
 
-To enable thinking before response, adding the following system prompt before your question:
+为了能够让模型在回答之前思考，请在问题前添加以下系统提示：
 
 ```python
 cot_prompt = "SYSTEM: You are a helpful assistant. When the user asks a question, your response must include two parts: first, the reasoning process enclosed in <thinking>...</thinking> tags, then the final answer enclosed in <answer>...</answer> tags. The critical answer or key result should be placed within \\boxed{}.\n"
@@ -378,7 +367,7 @@ output_text = processor.batch_decode(
 print(output_text)
 ```
 
-### Audio tasks
+### 音频任务
 
 ```python
 # ASR
@@ -465,39 +454,12 @@ audio_tokens = model.talker.omni_audio_generation(
 waveform = audio_detokenizer.token2wav(audio_tokens, save_path='out.wav', **spk_input)
 
 ```
+更多关于 ASR, SpeechQA, 和 TTS 任务的细节，参考`test_audio_tasks.py`。
 
-```python
-# zero-shot TTS
-from modeling_bailing_talker import AudioDetokenizer
-from audio_detokenizer.cli.frontend import TTSFrontEnd
-from hyperpyyaml import load_hyperpyyaml
+### 图像生成&编辑
 
-model_name_or_path = model.config._name_or_path
-audio_detokenizer = AudioDetokenizer(
-    f'{model_name_or_path}/talker/audio_detokenizer.yaml',
-    flow_model_path=f'{model_name_or_path}/talker/flow.pt',
-    hifigan_model_path=f'{model_name_or_path}/talker/hift.pt'
-)
+Ming-omni 原生支持图片生成和图片编辑，只需要在generate函数中添加相应的参数即可使用该功能。
 
-with open(f'{model_name_or_path}/talker/audio_detokenizer.yaml', 'r') as f:
-    configs = load_hyperpyyaml(f)
-audio_frontend = TTSFrontEnd(
-    configs["feat_extractor"],
-    f'{model_name_or_path}/talker/campplus.onnx',
-    f'{model_name_or_path}/talker/speech_tokenizer_v1.onnx',
-)
-
-tts_text = "这是一条测试语句。"
-spk_input = audio_frontend.frontend_zero_shot(prompt_text="感谢你的认可。", prompt_wav_path="data/spks/prompt.wav")
-audio_tokens = model.talker.omni_audio_generation(tts_text, **spk_input)
-waveform = audio_detokenizer.token2wav(audio_tokens, save_path='out.wav', **spk_input)
-```
-
-For detailed usage for ASR, SpeechQA, and TTS tasks, please refer to `test_audio_tasks.py`
-
-### Image Generation & Edit
-
-Ming-omni natively supports image generation and image editing. To use this function, you only need to add the corresponding parameters in the generate function.
 
 ```python
 # Image generation mode currently limits the range of input pixels.
@@ -567,13 +529,14 @@ image.save("./edit.jpg")
 ```
 
 
-## License and Legal Disclaimer
+## 许可和法律免责声明
 
-This code repository is licensed under the [MIT License](./LICENSE), and the Legal Disclaimer is located in the [LEGAL.md](./LEGAL.md) under the project's root directory.
+本代码仓库遵循 [MIT License](./LICENSE), 法律免责声明[LEGAL.md](./LEGAL.md) 位于项目根目录下。
 
-## Citation
 
-If you find our work helpful, feel free to give us a cite.
+## 引用
+
+如果您觉得我们的工作有所帮助，欢迎引用。
 
 ```bibtex
 
@@ -586,5 +549,3 @@ If you find our work helpful, feel free to give us a cite.
       url = {https://arxiv.org/abs/2506.09344}
 }
 ```
-
-
